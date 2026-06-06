@@ -10,10 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/src/style/style.css" />
-    <link rel="stylesheet" href="/src/style/mistake.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/mypage.css" />
     <script>
       // 로그인 상태가 아니면 즉시 로그인 페이지로 이동 (깜빡임 방지)
+      // mypage 직접 접근 방지: 로그인되지 않았다면 로그인 페이지로 이동
       if (!sessionStorage.getItem('loggedInUser')) {
         alert('로그인 후 이용 가능한 페이지입니다.')
         setTimeout(() => {
@@ -36,11 +37,12 @@
             >🛡️</span
           ><span style="font-style: italic">STUDEO</span>
         </a>
+
         <ul class="nav-links">
           <li><a href="/src/pages/learn.html">학습</a></li>
           <li><a href="/src/pages/quiz/quizzes.html">퀴즈</a></li>
           <li><a href="/src/pages/community.html">게시판</a></li>
-          <li class="member-only active">
+          <li class="member-only">
             <a href="/src/pages/mistake.html">오답 노트</a>
           </li>
         </ul>
@@ -53,62 +55,53 @@
         <a href="/src/pages/team.html" class="team-link">팀 소개</a>
       </div>
     </header>
+
     <div class="container">
-      <div class="mistake-container">
-        <div class="top-tittle">
-          <button
-            type="button"
-            id="btn-back"
-            class="btn-back"
-            aria-label="이전 페이지로 이동"
-          >
-            <div class="icon-back"></div>
-          </button>
-          <h1>오답노트</h1>
+      <div class="mypage-container">
+        <h1>마이 페이지</h1>
+        <p id="welcome"></p>
+        <div class="mypage-section-top">
+          <section class="note-section">
+            <h2>나의 메모</h2>
+            <textarea
+              id="note-input"
+              placeholder="메모를 입력하세요."
+            ></textarea>
+            <button id="save-note">메모 저장</button>
+            <div id="note-display" class="note-display">
+              저장된 메모가 없습니다.
+            </div>
+          </section>
+
+          <section class="todo-section">
+            <h2>할 일</h2>
+            <div class="todo-input-row">
+              <input
+                id="todo-input"
+                type="text"
+                placeholder="새 할 일을 입력하세요."
+              />
+              <button id="add-todo">추가</button>
+            </div>
+            <ul id="todo-list" class="todo-list"></ul>
+          </section>
         </div>
-        <div class="btn-center">
-          <button class="primary" onclick="startTip()">작성 TIP</button>
+        <div class="mypage-section-bottom">
+          <section class="review-notes">
+            <h2>오답 노트</h2>
+            <div id="review-notes-list" class="review-notes-list">
+              <div class="review-note-empty">저장된 오답이 없습니다.</div>
+            </div>
+          </section>
         </div>
-
-        <div class="card">
-          <h3>오답 입력</h3>
-          <textarea id="question" placeholder="문제"></textarea>
-          <input id="correct" placeholder="정답" />
-          <input id="myAnswer" placeholder="내 답" />
-
-          <select id="type">
-            <option>선택안함</option>
-            <option>유형1 - 이해 못함</option>
-            <option>유형2 - 중간 막힘</option>
-            <option>유형3 - 개념 부족</option>
-            <option>유형4 - 풀이 오류</option>
-            <option>유형5 - 단순 실수</option>
-          </select>
-
-          <textarea id="analysis" placeholder="분석"></textarea>
-
-          <button class="primary" onclick="addNote()">추가</button>
-        </div>
-
-        <div id="noteList"></div>
-      </div>
-
-      <!-- ✅ 모달 -->
-      <div id="tipModal" class="modal">
-        <div class="modal-content">
-          <h2>시험 대비 작성 TIP</h2>
-          <p id="tipText"></p>
-
-          <div class="modal-buttons">
-            <button onclick="prevTip()">이전</button>
-            <button onclick="nextTip()">다음</button>
-            <button onclick="closeTip()">닫기</button>
-          </div>
+        <div class="bottom-link">
+          <a href="./license.html">저작권</a>
+          <button id="logout-button">로그아웃</button>
         </div>
       </div>
     </div>
     <footer>© 김정현진과 유청림성준. All rights reserved.</footer>
     <script src="/src/script/main.js"></script>
-    <script src="/src/script/mistake.js"></script>
+    <script src="../script/mypage.js"></script>
   </body>
 </html>

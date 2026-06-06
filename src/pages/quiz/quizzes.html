@@ -17,24 +17,34 @@
   <body>
     <header>
       <div class="header-left">
-        <a href="../../../index.html" class="logo">
+        <a href="/index.html" class="logo">
           <span
             style="
               background: linear-gradient(135deg, #614e9c, #7476d4);
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
             "
-            >🛡️ </span
+            >🛡️</span
           ><span style="font-style: italic">STUDEO</span>
         </a>
         <ul class="nav-links">
-          <li><a href="../learn.html">학습</a></li>
-          <li class="active"><a href="./quizzes.html">퀴즈</a></li>
-          <li><a href="/src/pages/mistake.html">오답노트</a></li>
+          <li><a href="/src/pages/learn.html">학습</a></li>
+          <li class="active">
+            <a href="/src/pages/quiz/quizzes.html">퀴즈</a>
+          </li>
+          <li><a href="/src/pages/community.html">게시판</a></li>
+          <li class="member-only">
+            <a href="/src/pages/mistake.html">오답 노트</a>
+          </li>
         </ul>
       </div>
+
       <div class="header-right">
-        <a href="../team.html" class="team-link">팀 소개</a>
+        <div class="login"><a href="/src/pages/login.html">로그인</a></div>
+        <a href="/src/pages/mypage.html" class="mypage-link member-only">
+          <img src="/assets/mypage-icon.png" alt="프로필 이미지" />
+        </a>
+        <a href="/src/pages/team.html" class="team-link">팀 소개</a>
       </div>
     </header>
 
@@ -73,19 +83,27 @@
           <div class="filter-group">
             <h4>종류</h4>
             <label class="filter-item"
-              ><input type="checkbox" /> 전공 필수</label
+              ><input type="checkbox" data-filter="전공필수" /> 전공 필수</label
             >
             <label class="filter-item"
-              ><input type="checkbox" /> 전공 선택</label
+              ><input type="checkbox" data-filter="전공선택" /> 전공 선택</label
             >
           </div>
 
           <div class="filter-group">
             <h4>Tier</h4>
-            <label class="filter-item"><input type="checkbox" /> 1학년</label>
-            <label class="filter-item"><input type="checkbox" /> 2학년</label>
-            <label class="filter-item"><input type="checkbox" /> 3학년</label>
-            <label class="filter-item"><input type="checkbox" /> 4학년</label>
+            <label class="filter-item"
+              ><input type="checkbox" data-filter="1학년" /> 1학년</label
+            >
+            <label class="filter-item"
+              ><input type="checkbox" data-filter="2학년" /> 2학년</label
+            >
+            <label class="filter-item"
+              ><input type="checkbox" data-filter="3학년" /> 3학년</label
+            >
+            <label class="filter-item"
+              ><input type="checkbox" data-filter="4학년" /> 4학년</label
+            >
           </div>
         </aside>
 
@@ -183,8 +201,9 @@
     </div>
 
     <footer>
-      해당 페이지는 드림핵 홈페이지를 복사하였습니다.<br />© 김정현진과
-      유청림성준. All rights reserved.
+      © 김정현진과 유청림성준. All rights reserved.<br />Powered by Dreamhack.
     </footer>
+    <script src="/src/script/main.js"></script>
+    <script src="/src/script/filter.js"></script>
   </body>
 </html>

@@ -186,6 +186,7 @@ body.main-page .logo {
 body.main-page .nav-links {
   color: #111;
 }
+
 /* ✅ 카드 애니메이션 (필수) */
 .card {
   opacity: 0;

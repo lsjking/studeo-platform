@@ -21,7 +21,7 @@
   <body class="team-page">
     <header>
       <div class="header-left">
-        <a href="../../index.html" class="logo">
+        <a href="/index.html" class="logo">
           <span
             style="
               background: linear-gradient(135deg, #614e9c, #7476d4);
@@ -33,14 +33,21 @@
         </a>
 
         <ul class="nav-links">
-          <li><a href="./learn.html">학습</a></li>
-          <li><a href="./quiz/quizzes.html">퀴즈</a></li>
-          <li><a href="/src/pages/mistake.html">오답노트</a></li>
+          <li><a href="/src/pages/learn.html">학습</a></li>
+          <li><a href="/src/pages/quiz/quizzes.html">퀴즈</a></li>
+          <li><a href="/src/pages/community.html">게시판</a></li>
+          <li class="member-only">
+            <a href="/src/pages/mistake.html">오답 노트</a>
+          </li>
         </ul>
       </div>
 
       <div class="header-right">
-        <a href="./team.html" class="team-link">팀 소개</a>
+        <div class="login"><a href="/src/pages/login.html">로그인</a></div>
+        <a href="/src/pages/mypage.html" class="mypage-link member-only">
+          <img src="/assets/mypage-icon.png" alt="프로필 이미지" />
+        </a>
+        <a href="/src/pages/team.html" class="team-link">팀 소개</a>
       </div>
     </header>
 
@@ -77,8 +84,8 @@
                 <p class="info-line">
                   <b>포트폴리오 주소</b>
                   <br />
-                  <a href="https://kim-s-flame.vercel.app/" target="_blank">
-                    https://kim-s-flame.vercel.app/
+                  <a href="https://shshjang14.vercel.app/" target="_blank">
+                    https://shshjang14.vercel.app/
                   </a>
                 </p>
                 <p><b>팀원 역할</b><br />총괄, 메인프레임, 학습페이지</p>
@@ -112,9 +119,9 @@
                   <b>포트폴리오 주소</b>
                   <br />
                   <a
-                    href="https://portfolio-chi-mauve-64.vercel.app/"
+                    href="https://portfolio-chi-mauve-64.vercel.app/assignments.html"
                     target="_blank"
-                    >https://portfolio-chi-mauve-64.vercel.app/</a
+                    >https://portfolio-chi-mauve-64.vercel.app/assignments.html</a
                   >
                 </p>
                 <p><b>팀원 역할</b><br />퀴즈 페이지</p>
@@ -151,8 +158,10 @@
                 <p class="info-line">
                   <b>포트폴리오 주소</b>
                   <br />
-                  <a href="https://me-ten-theta.vercel.app/" target="_blank"
-                    >https://me-ten-theta.vercel.app/</a
+                  <a
+                    href="https://web-final-exam-qc6r.vercel.app/"
+                    target="_blank"
+                    >https://web-final-exam-qc6r.vercel.app/</a
                   >
                 </p>
                 <p><b>팀원 역할</b><br />메인 프레임, 반응형 작업, 검수</p>
@@ -189,9 +198,9 @@
                 <p class="info-line">
                   <b>포트폴리오 주소</b>
                   <br />
-                  <a href="https://gb3.vercel.app/" target="_blank">
-                    https://gb3.vercel.app/
-                  </a>
+                  <a href="https://absoul.vercel.app/" target="_blank"
+                    >https://absoul.vercel.app/</a
+                  >
                 </p>
                 <p><b>팀원 역할</b><br />홈 페이지, 팀 소개 페이지</p>
               </div>
@@ -242,5 +251,6 @@
       </div>
     </div>
     <footer>© 김정현진과 유청림성준. All rights reserved.</footer>
+    <script src="/src/script/main.js"></script>
   </body>
 </html>
